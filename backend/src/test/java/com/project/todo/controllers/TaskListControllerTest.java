@@ -3,6 +3,7 @@ package com.project.todo.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.todo.models.Task;
 import com.project.todo.services.TaskService;
+import org.hamcrest.core.Is;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,5 +73,15 @@ public class TaskListControllerTest {
                     .contentType("application/json")
                     .content(objectMapper.writeValueAsString(task)))
             .andExpect(status().isNoContent());
+  }
+
+  @Test
+  public void thenReturnBadRequestIfPayloadIsNotValid() throws Exception {
+    Task invalidTask = new Task();
+
+    mockMvc.perform(post("/task")
+                    .contentType("application/json")
+                    .content(objectMapper.writeValueAsString(invalidTask)))
+            .andExpect(status().isBadRequest()).andExpect(jsonPath("message", Is.is("Corpo inválido")));
   }
 }
