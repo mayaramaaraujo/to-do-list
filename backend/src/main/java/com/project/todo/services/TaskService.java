@@ -23,14 +23,20 @@ public class TaskService {
     }
 
     public List<Task> getAll() {
-        return taskRepository.findAll();
+        return taskRepository.findByOrderByCreatedDateDesc();
     }
 
-    public Task update(UUID id, Task updatedTask) {
-        Task task = taskExists(id);
+    public Task update(String id, Task updatedTask) {
+        Task task = taskExists(UUID.fromString(id));
 
-        task.setTitle(updatedTask.getTitle());
-        task.setDescription(updatedTask.getDescription());
+        if(updatedTask.getTitle() != null) {
+            task.setTitle(updatedTask.getTitle());
+        }
+
+        if(updatedTask.getDescription() != null) {
+            task.setDescription(updatedTask.getDescription());
+        }
+
         task.setUpdatedDate(DateFormat.dateFormat(LocalDateTime.now()));
         task.setDone(updatedTask.isDone());
         taskRepository.save(task);
@@ -38,8 +44,8 @@ public class TaskService {
         return task;
     }
 
-    public void delete(UUID id) {
-        Task task = taskExists(id);
+    public void delete(String id) {
+        Task task = taskExists(UUID.fromString(id));
         taskRepository.delete(task);
     }
 

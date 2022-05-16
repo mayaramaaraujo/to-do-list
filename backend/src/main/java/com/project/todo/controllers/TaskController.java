@@ -32,15 +32,14 @@ public class TaskController {
     }
 
     @PutMapping("/{taskId}")
-    public ResponseEntity<?> update(@PathVariable(value = "taskId") String id, @RequestBody @Valid Task updatedTask) {
-        Task task = taskService.update(UUID.fromString(id), updatedTask);
+    public ResponseEntity<?> update(@PathVariable(value = "taskId") String id, @RequestBody Task updatedTask) {
+        Task task = taskService.update(id, updatedTask);
         return ResponseEntity.ok(task);
     }
 
     @DeleteMapping("/{taskId}")
     public ResponseEntity<?> delete(@PathVariable(value = "taskId") String id) {
-        System.out.println("foi chamado");
-        taskService.delete(UUID.fromString(id));
+        taskService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

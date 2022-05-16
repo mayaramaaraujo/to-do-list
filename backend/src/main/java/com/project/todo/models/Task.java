@@ -2,6 +2,7 @@ package com.project.todo.models;
 
 import com.project.todo.utils.DateFormat;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Task {
 
     @Id
@@ -36,4 +38,9 @@ public class Task {
     private String createdDate = DateFormat.dateFormat(LocalDateTime.now());
     private String updatedDate;
 
+    public Task(String title, String description, boolean done) {
+        this.title = title;
+        this.description = description;
+        this.done = done;
+    }
 }
