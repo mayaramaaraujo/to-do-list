@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -20,6 +22,8 @@ import static org.mockito.Mockito.when;
 public class TaskServiceTest {
 
   Task task;
+
+  List<Task> taskArrayList = new ArrayList<>();
 
   UUID invalidUUID = UUID.randomUUID();
 
@@ -34,8 +38,11 @@ public class TaskServiceTest {
     task = new Task("title", "description", false);
     task.setId(UUID.randomUUID());
 
+    taskArrayList.add(task);
+
     when(taskRepository.findById(invalidUUID)).thenReturn(Optional.empty());
     when(taskRepository.findById(task.getId())).thenReturn(Optional.of(task));
+    when(taskRepository.findByOrderByCreatedDateDesc()).thenReturn(taskArrayList);
   }
 
   @Test
@@ -49,6 +56,25 @@ public class TaskServiceTest {
   @Test
   public void thenReturnTaskNotFoundExceptionIfTaskDoesNotExists() {
     assertThrows(TaskNotFoundException.class, () -> taskService.taskExists(invalidUUID));
+  }
+
+  @Test
+  public void thenReturnVoidIfTaskIsDeleted() {
+    assertDoesNotThrow(() -> taskService.delete(task.getId().toString()));
+  }
+
+  @Test
+  public void thenReturnVoidIfTaskIsUpdated() {
+    task.setDone(true);
+    assertDoesNotThrow(() -> taskService.update(task.getId().toString(), task));
+    assertNotNull(task.getUpdatedDate());
+  }
+
+  @Test
+  public void thenReturnListOfTasks() {
+    List<Task> tasks = taskService.getAll();
+    assertNotNull(tasks);
+    assertEquals(tasks.size(), 1);
   }
 
 }
