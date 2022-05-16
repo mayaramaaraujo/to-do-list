@@ -1,15 +1,15 @@
-import { TaskCreateForm } from "pages/TaskPage";
 
 import * as TF from './styles';
 import * as G from "../GlobalStyles/GlobalStyles"
 import { useContext } from "react";
 import { ErrorContext } from "contexts/ErrorContext";
 import { SuccessContext } from "contexts/SuccessContext";
+import { TaskCreateForm } from 'models/models';
 
 export interface TaskFormProps {
-    addTask: Function
+    addTask: (form: TaskCreateForm) => void
     form: TaskCreateForm
-    setForm: Function
+    setForm: React.Dispatch<React.SetStateAction<TaskCreateForm>>
 }
 
 function TaskForm({addTask, form, setForm, ...props}: TaskFormProps) {
@@ -17,7 +17,7 @@ function TaskForm({addTask, form, setForm, ...props}: TaskFormProps) {
     const errorContext = useContext(ErrorContext);
     const successContext = useContext(SuccessContext);
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
         addTask(form);
     }

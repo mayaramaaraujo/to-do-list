@@ -1,20 +1,11 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import { Task, TaskUpdatedForm } from "models/models";
 import TaskCard from "../TaskCard";
 import * as TL from './styles'
 
-export interface Task {
-    id: string,
-    title: string,
-    description: string,
-    done: boolean,
-    createdDate: string,
-    updatedDate: string | null
-}
-
-export interface TaskListProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface TaskListProps {
     taskList: Task[],
-    updateTask: Function
-    deleteTask: Function
+    updateTask: (id: string, body: TaskUpdatedForm) => void,
+    deleteTask: (id: string) => void
 }
 
 function TaskList({taskList, updateTask, deleteTask, ...props}: TaskListProps) {

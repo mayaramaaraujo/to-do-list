@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ErrorContext } from "contexts/ErrorContext";
 import { SuccessContext } from "contexts/SuccessContext";
+import { TaskCreateForm, TaskUpdatedForm } from "models/models";
 import { useEffect, useState } from "react";
 import TaskForm from "../../components/TaskForm";
 import TaskList from "../../components/TaskList";
@@ -8,14 +9,7 @@ import { BASE_URL } from "../../constants/constants";
 
 import * as TP from "./styles"
 
-export interface TaskCreateForm {
-    title: string,
-    description: string
-}
 
-export interface TaskUpdatedForm {
-    done: boolean
-}
 
 function TaskPage() {
 
