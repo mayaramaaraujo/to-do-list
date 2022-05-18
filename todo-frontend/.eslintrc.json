@@ -1,0 +1,48 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "plugin:react/jsx-runtime" 
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "camelcase": "error",
+        "spaced-comment": "error",
+        "quotes": [
+            2,
+            "double"
+        ],
+        "no-duplicate-imports": "error"
+    },
+    "settings": { 
+        "import/resolver": { 
+          "typescript": {} 
+        } 
+    },
+    "overrides": [
+        {
+          "files": [
+            "**/*.test.tsx"
+          ],
+          "env": {
+            "jest": true
+          }
+        }
+      ]
+}

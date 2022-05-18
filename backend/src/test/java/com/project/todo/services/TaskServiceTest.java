@@ -35,7 +35,7 @@ public class TaskServiceTest {
 
   @BeforeEach
   public void setup() {
-    task = new Task("title", "description", false);
+    task = new Task("title", false);
     task.setId(UUID.randomUUID());
 
     taskArrayList.add(task);

@@ -32,7 +32,7 @@ public class TaskRepositoryTest {
 
   @Test
   public void thenReturnNotEmptyList() {
-    Task task = new Task("title", "description", false);
+    Task task = new Task("title", false);
     taskRepository.save(task);
     List<Task> emptyList = taskRepository.findByOrderByCreatedDateDesc();
     assertEquals(emptyList.size(), 1);
@@ -40,8 +40,8 @@ public class TaskRepositoryTest {
 
   @Test
   public void thenReturnListOrderedByCreatedDate() {
-    Task task1 = new Task("title", "description", false);
-    Task task2 = new Task("title", "description", false);
+    Task task1 = new Task("title", false);
+    Task task2 = new Task("title", false);
 
     task1.setCreatedDate(LocalDateTime.of(2022,01,12,16,30,53).toString());
     task2.setCreatedDate(LocalDateTime.of(2022,02,12,16,30,53).toString());

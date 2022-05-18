@@ -36,7 +36,7 @@ public class TaskListControllerTest {
 
   @BeforeEach
   public void setup() {
-    task = new Task("title", "description", true);
+    task = new Task("title", true);
 
     task.setId(UUID.randomUUID());
     task.setDone(false);

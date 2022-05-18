@@ -29,18 +29,14 @@ public class Task {
     @NotBlank(message = "Titulo não pode estar vazio.")
     private String title;
 
-    @NotBlank(message = "Descrição não pode estar vazia.")
-    private String description;
-
     @NotNull
     private boolean done;
 
     private String createdDate = DateFormat.dateFormat(LocalDateTime.now());
     private String updatedDate;
 
-    public Task(String title, String description, boolean done) {
+    public Task(String title, boolean done) {
         this.title = title;
-        this.description = description;
         this.done = done;
     }
 }

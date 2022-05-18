@@ -33,10 +33,6 @@ public class TaskService {
             task.setTitle(updatedTask.getTitle());
         }
 
-        if(updatedTask.getDescription() != null) {
-            task.setDescription(updatedTask.getDescription());
-        }
-
         task.setUpdatedDate(DateFormat.dateFormat(LocalDateTime.now()));
         task.setDone(updatedTask.isDone());
         taskRepository.save(task);
