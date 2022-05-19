@@ -63,6 +63,16 @@ $border-radius-small: 0.4rem;
     color:white
 }
 
+.task-form_button:disabled, .task-form_button:disabled:hover {
+    color:white;
+    background-color: $primary-color;
+    border-bottom: 2px solid $primary-color;
+    border-top: 2px solid $primary-color;
+    border-right: 2px solid $primary-color;
+    opacity: 0.4;
+    cursor: default;
+}
+
 
 @media only screen and (max-width: 500px) {
     .task-form {

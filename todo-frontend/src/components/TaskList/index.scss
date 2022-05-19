@@ -92,4 +92,10 @@ $border-radius-small: 0.4rem;
     .task {
         width: 100%;
     }
+}
+
+@media only screen and (max-width: 320px) {
+    .task_checked-title, .task_unchecked-title {
+      word-break: break-all;
+    }
   }
