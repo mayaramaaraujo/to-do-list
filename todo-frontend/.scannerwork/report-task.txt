@@ -1,6 +1,6 @@
-projectKey=todo-frontend
+projectKey=todo-frontend-2
 serverUrl=http://localhost:9000
 serverVersion=9.4.0.54424
-dashboardUrl=http://localhost:9000/dashboard?id=todo-frontend
-ceTaskId=AYDdwZ_SO0C6Eo9YT3KI
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYDdwZ_SO0C6Eo9YT3KI
+dashboardUrl=http://localhost:9000/dashboard?id=todo-frontend-2
+ceTaskId=AYDhiC-mdUuC715DGt5j
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYDhiC-mdUuC715DGt5j
