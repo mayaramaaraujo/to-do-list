@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
 import { TaskFormComponent } from "../components/TaskForm";
 
 describe("Testes no formulário de adicionar tarefas", () => {
