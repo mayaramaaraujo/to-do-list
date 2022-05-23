@@ -17,4 +17,7 @@ A simple to do list project using React, Typescript and Sass.
 ![image](https://user-images.githubusercontent.com/63872581/169814394-1d9d0969-0ad9-4391-9eb0-1b72728b808b.png)
 
 
+This is the *[Project on Heroku](https://todolist-frontend-1.herokuapp.com/)*.
+
+
 
