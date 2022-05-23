@@ -4,78 +4,81 @@ $text-color: #000;
 $border-radius-small: 0.4rem;
 
 .task-form {
-    width: 24rem;
-    display: flex;
-    border-radius: 1.2rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    transition: 0.3s;
+  width: 24rem;
+  display: flex;
+  border-radius: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  transition: 0.3s;
 }
 
 .task-form:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-.task-form_input {    
-    height: 2.4rem;
-    
-    border-bottom: 2px solid $primary-color;
-    border-top: 2px solid $primary-color;
-    border-left: 2px solid $primary-color;
-    border-right: none;
-    border-radius: 0.4rem 0 0 0.4rem;
-    
-    padding: 0.4rem;
+.task-form_input {
+  height: 2.4rem;
 
-    flex-grow: 3;
+  border-bottom: 2px solid $primary-color;
+  border-top: 2px solid $primary-color;
+  border-left: 2px solid $primary-color;
+  border-right: none;
+  border-radius: 0.4rem 0 0 0.4rem;
+
+  padding: 0.4rem;
+
+  flex-grow: 3;
 }
 
 .task-form_input:focus {
-    outline: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .task-form_button {
-    border-bottom: 2px solid $primary-color;
-    border-top: 2px solid $primary-color;
-    border-right: 2px solid $primary-color;
-    border-left: none;
-    border-radius: 0px 0.4rem 0.4rem 0;
+  border-bottom: 2px solid $primary-color;
+  border-top: 2px solid $primary-color;
+  border-right: 2px solid $primary-color;
+  border-left: none;
+  border-radius: 0px 0.4rem 0.4rem 0;
 
-    background-color: $primary-color;
-    cursor: pointer;
+  background-color: $primary-color;
+  cursor: pointer;
 
-    flex-grow: 1;
-    transition: 0.3s;
-    font-size: 1rem;
+  flex-grow: 1;
+  transition: 0.3s;
+  font-size: 1rem;
 
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .task-form_button:hover {
-    background-color: $secondary-color;
+  background-color: $secondary-color;
 
-    border-bottom: 2px solid $secondary-color;
-    border-top: 2px solid $secondary-color;
-    border-right: 2px solid $secondary-color;
-    border-left: none;
+  border-bottom: 2px solid $secondary-color;
+  border-top: 2px solid $secondary-color;
+  border-right: 2px solid $secondary-color;
+  border-left: none;
 
-    transition: 0.3s;
-    color:white
+  transition: 0.3s;
+  color: white;
 }
 
-.task-form_button:disabled, .task-form_button:disabled:hover {
-    color:white;
-    background-color: $primary-color;
-    border-bottom: 2px solid $primary-color;
-    border-top: 2px solid $primary-color;
-    border-right: 2px solid $primary-color;
-    opacity: 0.4;
-    cursor: default;
+.task-form_button:disabled,
+.task-form_button:disabled:hover {
+  color: white;
+  background-color: $primary-color;
+  border-bottom: 2px solid $primary-color;
+  border-top: 2px solid $primary-color;
+  border-right: 2px solid $primary-color;
+  opacity: 0.4;
+  cursor: default;
 }
-
 
 @media only screen and (max-width: 500px) {
-    .task-form {
-      width: 100%;
-    }
+  .task-form {
+    width: 100%;
   }
+}

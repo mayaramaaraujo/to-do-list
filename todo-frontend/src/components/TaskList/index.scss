@@ -4,98 +4,102 @@ $text-color: #000;
 $border-radius-small: 0.4rem;
 
 .task {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    column-gap: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0.8rem;
 
-    width: 24rem;
+  width: 24rem;
 
-    padding: 1rem;
-    margin-bottom: 0.4rem;    
+  padding: 1rem;
+  margin-bottom: 0.4rem;
 
-    border-radius: $border-radius-small;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px 1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border-radius: $border-radius-small;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px 1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .task:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  transition: 0.3s;
 }
 
-.task_checked, .task_unchecked {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 100%;
-    box-sizing: border-box;
+.task_checked,
+.task_unchecked {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  box-sizing: border-box;
 
-    background-color: white;
+  background-color: white;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .task_checked {
-    border: 2px solid $secondary-color;
-    background-color: $secondary-color;
+  border: 2px solid $secondary-color;
+  background-color: $secondary-color;
 }
 
 .task_unchecked {
-    border: 2px solid $primary-color;
+  border: 2px solid $primary-color;
 }
 
 .task_checked:hover {
-    border: 2px solid $primary-color;
+  border: 2px solid $primary-color;
 }
 
-.task_unchecked:hover{
-    border: 2px solid $secondary-color;
+.task_unchecked:hover {
+  border: 2px solid $secondary-color;
 }
 
-.task_checked-title, .task_unchecked-title {
-    flex-grow: 1;
+.task_checked-title,
+.task_unchecked-title {
+  flex-grow: 1;
 
-    font-weight: normal;
-    font-size: 1rem;
-    color: $text-color;
+  font-weight: normal;
+  font-size: 1rem;
+  color: $text-color;
 
-    margin: 0 0.2rem 0 0.2rem;
-    margin-bottom: 3px;
+  margin: 0 0.2rem 0 0.2rem;
+  margin-bottom: 3px;
 }
 
 .task_checked-title {
-    text-decoration: line-through;    
+  text-decoration: line-through;
 }
 
-
 .task_delete-button {
-    width: 1.5rem;
-    height: 1.5rem;
-    box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  box-sizing: border-box;
 
-    border: 2px solid $text-color;
-    border-radius: 5px;
+  border: 2px solid $text-color;
+  border-radius: 5px;
 
-    background-color: white;
+  background-color: white;
 }
 
 .task_delete-button:hover {
-    background-color: #4361ee;
+  background-color: #4361ee;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .task_delete_icon {
-    width: 100%;
+  width: 100%;
 }
 
 @media only screen and (max-width: 500px) {
-    .task {
-        width: 100%;
-    }
+  .task {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
-    .task_checked-title, .task_unchecked-title {
-      word-break: break-all;
-    }
+  .task_checked-title,
+  .task_unchecked-title {
+    word-break: break-all;
   }
+}
